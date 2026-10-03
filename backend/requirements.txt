@@ -1,0 +1,25 @@
+# Core LLM & Agent Frameworks
+google-genai
+langchain-google-genai
+langgraph
+mcp
+
+# Web Server & API Gateway
+fastapi
+uvicorn
+python-multipart
+
+# Data Processing & XML Safety
+pandas
+defusedxml
+pydantic
+
+# Database & Vector Embeddings
+psycopg2-binary
+sqlalchemy
+pgvector
+sentence-transformers
+
+# Utilities & Resilience
+tenacity
+python-dotenv

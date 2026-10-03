@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.env
+
+# Node / React
+node_modules/
+dist/
+.DS_Store
+
+# Temporary ADAS Simulation Files
+/tmp/adas/*
+*.log

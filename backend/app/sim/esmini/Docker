@@ -1,0 +1,29 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install native Linux graphics and runtime libraries required by esmini
+RUN apt-get update && apt-get install -y \
+    wget \
+    unzip \
+    libgl1-mesa-glx \
+    libglu1-mesa \
+    libx11-6 \
+    libxrandr2 \
+    libxinerama1 \
+    libxcursor1 \
+    libxi6 \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /opt
+
+# Download the prebuilt Linux esmini package directly from GitHub releases
+RUN wget https://github.com/esmini/esmini/releases/download/v3.7.1/esmini-demo-linux.zip \
+    && unzip esmini-demo-linux.zip \
+    && rm esmini-demo-linux.zip \
+    && mv esmini* esmini
+
+WORKDIR /opt/esmini
+
+# Set default execution entrypoint to the esmini binary
+ENTRYPOINT ["./bin/esmini"]
